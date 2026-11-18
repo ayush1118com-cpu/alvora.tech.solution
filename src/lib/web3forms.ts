@@ -76,7 +76,7 @@ export class Web3FormsLeadService implements ILeadSubmissionService {
         return {
           success: true,
           message:
-            "Thank you! Your project inquiry has been received. Our team will review your requirements and get in touch shortly.",
+            "Thank you! Your enquiry has been submitted. We will contact you shortly.",
         };
       } else {
         return {

@@ -252,8 +252,10 @@ export const Contact: React.FC = () => {
                   <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-start gap-3 animate-fadeIn">
                     <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div className="text-xs sm:text-sm">
-                      <p className="font-bold">Inquiry Successfully Submitted!</p>
-                      <p className="mt-0.5 text-emerald-800">{statusMessage}</p>
+                      <p className="font-bold">Thank You!</p>
+                      <p className="mt-0.5 text-emerald-800">
+                        {statusMessage || "Your enquiry has been submitted. We will contact you shortly."}
+                      </p>
                     </div>
                   </div>
                 )}
