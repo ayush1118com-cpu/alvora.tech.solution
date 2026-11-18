@@ -1,0 +1,8 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="240" height="240" rx="24" fill="#F5F8FC"/>
+    <circle cx="120" cy="95" r="48" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="2"/>
+    <path d="M50 200C50 162.445 81.3401 132 120 132C158.66 132 190 162.445 190 200" fill="#E2E8F0"/>
+    <rect x="70" y="16" width="100" height="24" rx="12" fill="#1677E8" fill-opacity="0.1"/>
+    <text x="120" y="32" text-anchor="middle" fill="#123B8A" font-family="system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">TEAM MEMBER</text>
+    <text x="120" y="104" text-anchor="middle" fill="#123B8A" font-family="system-ui, sans-serif" font-size="24" font-weight="bold">TL</text>
+  </svg>
