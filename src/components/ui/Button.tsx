@@ -33,13 +33,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      "bg-[#123B8A] text-white hover:bg-[#0C2860] active:bg-[#081C44] focus-visible:outline-[#123B8A] shadow-sm hover:shadow-md hover:-translate-y-0.5",
+      "bg-[#123B8A] text-white hover:bg-[#0C2860] active:bg-[#081C44] focus-visible:outline-[#123B8A] shadow-sm hover:shadow-md hover:-translate-y-0.5 btn-shine-effect",
     secondary:
-      "bg-[#1677E8] text-white hover:bg-[#1264c5] active:bg-[#0e52a4] focus-visible:outline-[#1677E8] shadow-sm hover:shadow-md hover:-translate-y-0.5",
+      "bg-[#1677E8] text-white hover:bg-[#1264c5] active:bg-[#0e52a4] focus-visible:outline-[#1677E8] shadow-sm hover:shadow-md hover:-translate-y-0.5 btn-shine-effect",
     outline:
-      "border border-[#123B8A]/25 text-[#123B8A] bg-white hover:bg-[#F5F8FC] hover:border-[#123B8A] active:bg-blue-50 focus-visible:outline-[#123B8A]",
+      "border border-[#123B8A]/25 text-[#123B8A] bg-white hover:bg-[#F5F8FC] hover:border-[#123B8A] active:bg-blue-50 focus-visible:outline-[#123B8A] hover:-translate-y-0.5",
     white:
-      "bg-white text-[#123B8A] hover:bg-slate-50 active:bg-slate-100 shadow-md hover:shadow-lg focus-visible:outline-white hover:-translate-y-0.5",
+      "bg-white text-[#123B8A] hover:bg-slate-50 active:bg-slate-100 shadow-md hover:shadow-lg focus-visible:outline-white hover:-translate-y-0.5 btn-shine-effect",
     ghost:
       "text-[#123B8A] hover:bg-[#F5F8FC] active:bg-blue-100/60 focus-visible:outline-[#123B8A]",
   };

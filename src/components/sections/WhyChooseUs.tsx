@@ -1,6 +1,7 @@
 import React from "react";
-import { Sliders, Code2, Server, Headphones } from "lucide-react";
+import { Sliders, Code2, Server, Headphones, Check } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const reasons = [
   {
@@ -51,43 +52,55 @@ const reasons = [
 
 export const WhyChooseUs: React.FC = () => {
   return (
-    <section id="why-us" className="py-20 bg-[#F5F8FC]/50 border-t border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badge="Why Alvora"
-          title="Engineering Standards Built On"
-          highlightedText="Trust & Reliability."
-          description="We take a transparent, engineering-driven approach to every digital product. Here is how our methodology safeguards your investment."
-        />
+    <section id="why-us" className="py-24 bg-[#F8FAFC] border-t border-slate-200/80 relative overflow-hidden">
+      {/* Decorative ambient background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-10 w-96 h-96 rounded-full bg-[#1677E8]/5 blur-3xl animate-float" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[#38A5FF]/5 blur-3xl animate-float-reverse" />
+      </div>
 
-        {/* 4 Cards Grid */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal direction="up">
+          <SectionHeading
+            badge="Why Alvora"
+            title="Engineering Standards Built On"
+            highlightedText="Trust & Reliability."
+            description="We take a transparent, engineering-driven approach to every digital product. Here is how our methodology safeguards your investment."
+          />
+        </ScrollReveal>
+
+        {/* 4 Cards Grid with Staggered Entrance */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {reasons.map((reason, idx) => (
-            <div
+            <ScrollReveal
               key={idx}
-              className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#1677E8]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              direction="up"
+              delay={idx * 120}
+              className="h-full"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#F5F8FC] border border-blue-100 flex items-center justify-center mb-6">
-                  {reason.icon}
+              <div className="h-full bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#1677E8]/50 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group card-glow-hover">
+                <div>
+                  <div className="w-13 h-13 rounded-2xl bg-[#F5F8FC] border border-blue-100 flex items-center justify-center mb-6 group-hover:bg-[#1677E8]/10 group-hover:border-[#1677E8]/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    {reason.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-[#123B8A] transition-colors">
+                    {reason.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6 font-normal">
+                    {reason.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-[#101828] mb-3">
-                  {reason.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed mb-6">
-                  {reason.description}
-                </p>
-              </div>
 
-              <ul className="space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600">
-                {reason.points.map((pt, pIdx) => (
-                  <li key={pIdx} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#1677E8]" />
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="space-y-2.5 border-t border-slate-100 pt-5 text-xs text-slate-600">
+                  {reason.points.map((pt, pIdx) => (
+                    <li key={pIdx} className="flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-[#1677E8] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

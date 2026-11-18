@@ -9,19 +9,19 @@ interface TeamCardProps {
 
 export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
   return (
-    <div className="group relative bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#1677E8]/40 hover:-translate-y-1 transition-all duration-300">
-      {/* Top placeholder pill */}
+    <div className="group relative bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#1677E8]/50 hover:-translate-y-1 transition-all duration-300">
+      {/* Top placeholder badge */}
       {member.isPlaceholder && (
         <div className="absolute top-4 right-4">
-          <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-            Open Role Profile
+          <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-[#123B8A] border border-blue-200">
+            Profile Role
           </span>
         </div>
       )}
 
       <div>
         {/* Avatar */}
-        <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-[#F5F8FC] border border-blue-100 mb-5 group-hover:border-[#1677E8]/40 transition-colors">
+        <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-[#F8FAFC] border border-blue-100 mb-5 group-hover:scale-105 group-hover:border-[#1677E8]/40 transition-all shadow-2xs">
           <Image
             src={member.avatarUrl}
             alt={member.name}
@@ -33,16 +33,16 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
         </div>
 
         {/* Info */}
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#1677E8] block mb-1">
+        <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#1677E8] block mb-1">
           {member.category}
         </span>
-        <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#123B8A] transition-colors">
+        <h3 className="text-lg font-bold text-[#0F172A] group-hover:text-[#123B8A] transition-colors">
           {member.name}
         </h3>
-        <p className="text-xs font-medium text-slate-500 mb-3">
+        <p className="text-xs font-semibold text-slate-500 mb-3">
           {member.role}
         </p>
-        <p className="text-xs text-[#667085] leading-relaxed mb-5">
+        <p className="text-xs text-[#475569] leading-relaxed mb-6 font-normal">
           {member.bio}
         </p>
       </div>
@@ -53,7 +53,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
           href={member.linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#0077B5] transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#0077B5] transition-colors"
           aria-label={`${member.name} LinkedIn Profile`}
         >
           <LinkedinIcon className="w-4 h-4 text-[#0077B5]" />

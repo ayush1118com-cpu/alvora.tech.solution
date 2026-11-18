@@ -9,9 +9,11 @@ import {
   FileText,
   ArrowRight,
   TrendingUp,
+  CheckCircle,
 } from "lucide-react";
 import { marketingDivisionData } from "@/data/marketing";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import Link from "next/link";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -28,92 +30,116 @@ export const DigitalMarketing: React.FC = () => {
   return (
     <section
       id="digital-marketing"
-      className="py-20 bg-gradient-to-b from-[#123B8A] via-[#0F3275] to-[#123B8A] text-white relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-[#0A2255] via-[#123B8A] to-[#0D2E6B] text-white relative overflow-hidden"
     >
-      {/* Decorative background circles */}
+      {/* Background Lighting & Grid with Continuous Float */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-[#38A5FF]/10 blur-3xl" />
-        <div className="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-[#1677E8]/20 blur-3xl" />
+        <div className="absolute -top-40 right-10 w-[500px] h-[500px] rounded-full bg-[#38A5FF]/15 blur-[120px] animate-float" />
+        <div className="absolute -bottom-40 left-10 w-[500px] h-[500px] rounded-full bg-[#1677E8]/20 blur-[120px] animate-float-reverse" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badge="Specialized Division"
-          title="Artful Creation —"
-          highlightedText="Digital Marketing & Growth."
-          description={marketingDivisionData.description}
-          inverted={true}
-        />
+        <ScrollReveal direction="up">
+          <SectionHeading
+            badge="Specialized Growth Division"
+            title="Artful Creation —"
+            highlightedText="Digital Marketing & Performance."
+            description={marketingDivisionData.description}
+            inverted={true}
+          />
+        </ScrollReveal>
 
-        {/* Division Highlight Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1.5 text-center md:text-left">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#38A5FF] font-semibold">
-              Alvora Marketing Ecosystem
-            </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
-              Creative Brand Storytelling Backed By Performance Metrics
-            </h3>
-            <p className="text-xs sm:text-sm text-blue-100 max-w-2xl">
-              We align design aesthetics with conversion funnels so every marketing campaign generates qualified leads for your technology and business offerings.
-            </p>
-          </div>
-
-          <Link
-            href="#contact"
-            className="shrink-0 px-6 py-3 rounded-xl bg-white text-[#123B8A] hover:bg-blue-50 font-bold text-sm shadow-lg transition-all flex items-center gap-2 cursor-pointer"
-          >
-            <span>Discuss Marketing Strategy</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        {/* 7 Services Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {marketingDivisionData.services.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white/95 rounded-2xl p-6 text-slate-900 border border-white/20 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-11 h-11 rounded-xl bg-[#F5F8FC] border border-blue-100 flex items-center justify-center mb-5">
-                  {iconMap[item.iconName] || (
-                    <Sparkles className="w-5 h-5 text-[#1677E8]" />
-                  )}
-                </div>
-                <h4 className="text-base font-bold text-[#101828] mb-2.5">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-[#667085] leading-relaxed">
-                  {item.description}
-                </p>
+        {/* Division Highlight Banner with ScrollReveal */}
+        <ScrollReveal direction="up" delay={150}>
+          <div className="mt-14 p-6 sm:p-8 lg:p-10 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 group hover:border-white/40 transition-all duration-300">
+            <div className="space-y-3 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-[#38A5FF] text-xs font-bold border border-blue-400/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#38A5FF] animate-pulse" />
+                <span>Full-Funnel Client Acquisition</span>
               </div>
-
-              <div className="mt-5 pt-3 border-t border-slate-100">
-                <span className="text-[11px] font-semibold text-[#1677E8] flex items-center gap-1">
-                  <span>Included in Growth Retainers</span>
-                </span>
-              </div>
-            </div>
-          ))}
-
-          {/* Bonus Value Card */}
-          <div className="bg-gradient-to-br from-[#1677E8] to-[#38A5FF] rounded-2xl p-6 text-white shadow-lg flex flex-col justify-between border border-white/30">
-            <div>
-              <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center mb-5">
-                <TrendingUp className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-base font-bold text-white mb-2.5">
-                Full-Funnel Synergy
-              </h4>
-              <p className="text-xs text-blue-50 leading-relaxed">
-                Connect your website, landing page analytics, and conversion tracking directly with Artful Creation&apos;s ad campaigns for unified reporting.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                Data-Driven Growth Meets High-End Visual Design
+              </h3>
+              <p className="text-sm sm:text-base text-blue-100 max-w-2xl leading-relaxed">
+                We align conversion-optimized landing pages with targeted Meta, Google Ads, and organic SEO campaigns so every dollar spent generates verified customer inquiries.
               </p>
             </div>
-            <div className="mt-5 pt-3 border-t border-white/20 text-xs font-semibold text-white">
-              Complete ROI Transparency
+
+            <div className="shrink-0 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="#contact"
+                className="px-7 py-3.5 rounded-xl bg-white text-[#123B8A] hover:bg-blue-50 font-bold text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer btn-shine-effect"
+              >
+                <span>Discuss Campaign Strategy</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
+        </ScrollReveal>
+
+        {/* 7 Services Grid with Staggered Entrance */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {marketingDivisionData.services.map((item, idx) => (
+            <ScrollReveal
+              key={idx}
+              direction="up"
+              delay={(idx % 4) * 100}
+              className="h-full"
+            >
+              <div className="h-full bg-white rounded-2xl p-6 sm:p-7 text-slate-900 shadow-xl border border-white/80 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group card-glow-hover">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-[#F5F8FC] border border-blue-100 flex items-center justify-center mb-5 group-hover:bg-[#1677E8]/10 group-hover:border-[#1677E8]/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    {iconMap[item.iconName] || (
+                      <Sparkles className="w-5 h-5 text-[#1677E8]" />
+                    )}
+                  </div>
+                  <h4 className="text-base font-bold text-[#0F172A] mb-2.5 group-hover:text-[#123B8A] transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-[#475569] leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[11px] font-bold text-[#1677E8] flex items-center gap-1">
+                    <CheckCircle className="w-3.5 h-3.5" />
+                    <span>Growth Retainers</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1677E8] group-hover:translate-x-1.5 transition-all" />
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+
+          {/* Unified Value Card */}
+          <ScrollReveal direction="up" delay={marketingDivisionData.services.length % 4 * 100} className="h-full">
+            <div className="h-full bg-gradient-to-br from-[#1677E8] to-[#38A5FF] rounded-2xl p-6 sm:p-7 text-white shadow-xl flex flex-col justify-between border border-white/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-base font-bold text-white mb-2.5">
+                  Measurable ROI Tracking
+                </h4>
+                <p className="text-xs text-blue-50 leading-relaxed">
+                  Clear monthly analytics covering organic impression spikes, cost-per-acquisition (CPA), and qualified lead conversions.
+                </p>
+              </div>
+              <div className="mt-5 pt-3.5 border-t border-white/20 text-xs font-bold text-white flex items-center justify-between">
+                <span>End-To-End Growth Partnership</span>
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

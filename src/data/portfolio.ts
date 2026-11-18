@@ -18,7 +18,7 @@ export const portfolioData: PortfolioProject[] = [
     description:
       "A complete hospitality platform featuring Counter POS order booking, real-time Kitchen Display System dispatch, dynamic menu management, and integrated billing workflows.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WebSocket", "Node.js Architecture"],
-    imageUrl: "/images/portfolio/restaurant-pos-preview.webp",
+    imageUrl: "/images/portfolio/restaurant-pos-real.webp",
     projectUrl: "#products",
     featured: true,
   },
@@ -29,8 +29,8 @@ export const portfolioData: PortfolioProject[] = [
     description:
       "Modern high-speed static corporate website built with Next.js App Router, accessible semantic HTML, WCAG 2.2 AA compliance, and server-side lead pipeline.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SEO Architecture"],
-    imageUrl: "/images/portfolio/corporate-web-preview.webp",
-    projectUrl: "#",
+    imageUrl: "/images/portfolio/corporate-web-real.webp",
+    projectUrl: "#contact",
     featured: true,
   },
   {
@@ -40,7 +40,7 @@ export const portfolioData: PortfolioProject[] = [
     description:
       "Comprehensive digital marketing initiative covering performance marketing campaigns across Meta & Google Ads, search engine optimization (SEO), and cohesive brand design.",
     technologies: ["SEO Optimization", "Meta Ads", "Google Ads", "Brand Identity", "Analytics"],
-    imageUrl: "/images/portfolio/digital-marketing-preview.webp",
+    imageUrl: "/images/portfolio/digital-marketing-real.webp",
     projectUrl: "#digital-marketing",
     featured: true,
   },
@@ -51,7 +51,7 @@ export const portfolioData: PortfolioProject[] = [
     description:
       "Scalable administrative dashboard and workflow automation system built to streamline business process management, track records, and eliminate repetitive tasks.",
     technologies: ["React", "TypeScript", "REST APIs", "Tailwind CSS", "Role-Based Auth Ready"],
-    imageUrl: "/images/portfolio/enterprise-app-preview.webp",
+    imageUrl: "/images/portfolio/enterprise-app-real.webp",
     projectUrl: "#contact",
   },
 ];

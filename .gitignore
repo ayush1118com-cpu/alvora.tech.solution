@@ -34,8 +34,15 @@ yarn-error.log*
 .env*
 !.env.example
 
-# vercel
+# vercel & turbopack
 .vercel
+.turbo
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # typescript
 *.tsbuildinfo

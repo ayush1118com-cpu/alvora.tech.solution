@@ -6,7 +6,6 @@ import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { Products } from "@/components/sections/Products";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { Team } from "@/components/sections/Team";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { DigitalMarketing } from "@/components/sections/DigitalMarketing";
 import { Contact } from "@/components/sections/Contact";
@@ -33,9 +32,6 @@ export default function HomePage() {
 
         {/* Section 6 — Why Choose Alvora */}
         <WhyChooseUs />
-
-        {/* Section 7 — Our Team */}
-        <Team />
 
         {/* Section 8 — Portfolio */}
         <Portfolio />

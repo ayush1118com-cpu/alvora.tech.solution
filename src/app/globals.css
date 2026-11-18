@@ -2,16 +2,14 @@
 
 @theme {
   --color-primary: #123B8A;
-  --color-primary-dark: #0C2860;
+  --color-primary-dark: #0A2255;
   --color-secondary: #1677E8;
   --color-accent: #38A5FF;
   --color-brand-bg: #F5F8FC;
-  --color-main-text: #101828;
-  --color-secondary-text: #667085;
-}
-
-:root {
-  --font-inter: var(--font-inter);
+  --color-main-text: #0F172A;
+  --color-secondary-text: #475569;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 html {
@@ -19,50 +17,228 @@ html {
   color-scheme: light;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 body {
   background-color: #ffffff;
-  color: #101828;
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #0F172A;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+  letter-spacing: -0.025em;
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-radar {
+  animation: radarPing 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Button laser shine sweep */
+.btn-shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.75s ease;
+}
+.btn-shine-effect:hover::after {
+  left: 140%;
+}
+
+/* High-tech Card Glow Hover */
+.card-glow-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-glow-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(18, 59, 138, 0.14), 0 0 20px 2px rgba(56, 165, 255, 0.12);
+  border-color: rgba(22, 119, 232, 0.45);
+}
+
+/* Subtle Animated Gradient Text */
+.text-gradient-animate {
+  background: linear-gradient(90deg, #123B8A 0%, #1677E8 40%, #38A5FF 70%, #123B8A 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientShift 6s linear infinite;
+}
+
+/* Background Grids & Patterns */
+.bg-tech-grid {
+  background-image: linear-gradient(to right, rgba(22, 119, 232, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(22, 119, 232, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(18, 59, 138, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Glass Card styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Hide scrollbar completely on elements with .no-scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  display: none !important;
+  background: transparent !important;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  display: none !important;
+  background: transparent !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Custom Vertical Scrollbar restricted to root */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #f8fafc;
 }
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 4px;
+  border-radius: 9999px;
 }
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 
-/* Focus styles for keyboard accessibility */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
+/* Accessible outline */
+:focus-visible {
   outline: 2px solid #1677E8;
   outline-offset: 2px;
 }

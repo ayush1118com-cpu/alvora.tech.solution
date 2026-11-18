@@ -1,0 +1,91 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#EFF6FF" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#38A5FF" stop-opacity="0.22" />
+      <stop offset="45%" stop-color="#1677E8" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="leftOrb" cx="15%" cy="30%" r="35%">
+      <stop offset="0%" stop-color="#1677E8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="rightOrb" cx="85%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#38A5FF" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#1677E8" stroke-width="1" stroke-opacity="0.07" />
+      <circle cx="48" cy="48" r="1.5" fill="#1677E8" fill-opacity="0.15" />
+    </pattern>
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#123B8A" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#1677E8" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#38A5FF" stop-opacity="0.08" />
+    </linearGradient>
+    <linearGradient id="wave2" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#38A5FF" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#1677E8" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#123B8A" stop-opacity="0.04" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)" />
+
+  <!-- Grid Pattern -->
+  <rect width="1920" height="1080" fill="url(#grid)" />
+
+  <!-- Ambient Light Orbs -->
+  <rect width="1920" height="1080" fill="url(#centerGlow)" />
+  <rect width="1920" height="1080" fill="url(#leftOrb)" />
+  <rect width="1920" height="1080" fill="url(#rightOrb)" />
+
+  <!-- Flowing Architectural Digital Waves (Depth) -->
+  <g opacity="0.85">
+    <path d="M-100 850 C300 700, 700 950, 1100 800 C1500 650, 1800 850, 2020 750 L2020 1080 L-100 1080 Z" fill="url(#wave1)" />
+    <path d="M-100 780 C400 880, 800 680, 1200 790 C1600 900, 1850 720, 2020 800 L2020 1080 L-100 1080 Z" fill="url(#wave2)" />
+  </g>
+
+  <!-- Cyber Network Lines -->
+  <g stroke="#1677E8" stroke-width="1.5" stroke-opacity="0.2">
+    <!-- Left constellation -->
+    <line x1="120" y1="240" x2="280" y2="180" />
+    <line x1="280" y1="180" x2="360" y2="320" />
+    <line x1="360" y1="320" x2="220" y2="420" />
+    <line x1="220" y1="420" x2="120" y2="240" />
+    <line x1="280" y1="180" x2="480" y2="200" />
+    
+    <!-- Right constellation -->
+    <line x1="1560" y1="220" x2="1720" y2="160" />
+    <line x1="1720" y1="160" x2="1820" y2="310" />
+    <line x1="1820" y1="310" x2="1660" y2="390" />
+    <line x1="1660" y1="390" x2="1560" y2="220" />
+    <line x1="1560" y1="220" x2="1420" y2="280" />
+  </g>
+
+  <!-- Tech Nodes (Glow circles) -->
+  <g>
+    <!-- Left Nodes -->
+    <circle cx="120" cy="240" r="4" fill="#1677E8" />
+    <circle cx="280" cy="180" r="6" fill="#38A5FF" />
+    <circle cx="360" cy="320" r="5" fill="#123B8A" />
+    <circle cx="220" cy="420" r="4" fill="#1677E8" />
+    <circle cx="480" cy="200" r="3.5" fill="#38A5FF" />
+
+    <!-- Right Nodes -->
+    <circle cx="1560" cy="220" r="5" fill="#1677E8" />
+    <circle cx="1720" cy="160" r="4" fill="#38A5FF" />
+    <circle cx="1820" cy="310" r="6" fill="#123B8A" />
+    <circle cx="1660" cy="390" r="4" fill="#38A5FF" />
+    <circle cx="1420" cy="280" r="3.5" fill="#1677E8" />
+  </g>
+
+  <!-- Center subtle horizon orbit -->
+  <ellipse cx="960" cy="480" rx="640" ry="170" stroke="#38A5FF" stroke-width="1.5" stroke-opacity="0.14" stroke-dasharray="6 8" />
+  <ellipse cx="960" cy="480" rx="800" ry="220" stroke="#1677E8" stroke-width="1" stroke-opacity="0.09" />
+</svg>

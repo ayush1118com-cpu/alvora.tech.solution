@@ -12,7 +12,6 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Products", href: "#products" },
   { label: "Why Alvora", href: "#why-us" },
-  { label: "Team", href: "#team" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Digital Marketing", href: "#digital-marketing" },
   { label: "Contact", href: "#contact" },

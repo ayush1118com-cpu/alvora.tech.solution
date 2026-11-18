@@ -1,12 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { companyData } from "@/data/company";
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-heading",
+});
+
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-sans",
 });
 
 const siteUrl = "https://alvoratech.com";
@@ -88,10 +96,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/icon.png", sizes: "192x192", type: "image/png" },
     ],
+    shortcut: "/favicon.ico",
     apple: [
-      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
@@ -134,14 +146,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${plusJakarta.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-white text-[#101828] font-sans antialiased selection:bg-[#1677E8]/15 selection:text-[#123B8A]">
+      <body className="min-h-screen bg-white text-[#0F172A] font-sans antialiased selection:bg-[#1677E8]/15 selection:text-[#123B8A]">
         {children}
       </body>
     </html>
