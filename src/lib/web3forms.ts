@@ -18,11 +18,18 @@ export class Web3FormsLeadService implements ILeadSubmissionService {
   private endpoint: string;
 
   constructor() {
-    this.accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+    this.accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+      "0ad82509-ff69-4425-acd0-be919949d6a7";
     this.endpoint = "https://api.web3forms.com/submit";
   }
 
   async submitInquiry(data: ContactFormData): Promise<LeadSubmissionResponse> {
+    const key =
+      this.accessKey ||
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+      "0ad82509-ff69-4425-acd0-be919949d6a7";
+
     // Basic bot check honeypot
     if (data.botcheck && data.botcheck.trim() !== "") {
       return {
@@ -31,7 +38,7 @@ export class Web3FormsLeadService implements ILeadSubmissionService {
       };
     }
 
-    if (!this.accessKey || this.accessKey === "your_access_key_here") {
+    if (!key || key === "your_access_key_here") {
       return {
         success: false,
         message:
@@ -41,7 +48,7 @@ export class Web3FormsLeadService implements ILeadSubmissionService {
 
     try {
       const payload = {
-        access_key: this.accessKey,
+        access_key: key,
         subject: `New Project Inquiry from ${data.fullName} — Alvora Tech Solution`,
         from_name: "Alvora Lead Portal",
         name: data.fullName,
